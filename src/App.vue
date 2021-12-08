@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-toolbar-title> Vue Test </q-toolbar-title>
+        <q-toolbar-title @click="$router.push('/')" style="cursor:pointer" > Vue Test </q-toolbar-title>
 
         <q-space />
 
@@ -34,7 +34,6 @@ export default {
     const dataFetched = ref(false);
     onMounted(async () => {
       const res = await fetchCards();
-      console.log(res);
       dataFetched.value = true;
       $store.commit("setCards", res);
     });

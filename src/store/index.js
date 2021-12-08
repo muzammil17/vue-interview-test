@@ -23,11 +23,7 @@ const store = createStore({
     },
 
     getCard(state) {
-      return (key) => {
-        const card = [...state.cards.filter((c) => c.card_number === key)]
-        console.log(card)
-        return card
-      };
+      return (key) => [...state.cards.filter((c) => c.card_number === key)];
     },
   },
 });

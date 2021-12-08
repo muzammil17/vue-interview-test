@@ -27,7 +27,6 @@ export default {
     const $route = useRoute();
     const $router = useRouter();
     const $store = useStore();
-    console.log({ ...$route });
     const key = $route.params.card;
 
     let cardInfo = $store.getters.getCard(key);
@@ -35,7 +34,6 @@ export default {
     if (!cardInfo) {
       $router.push("/");
     }
-    console.log(cardInfo);
     return {
       cardInfo,
     };
